@@ -1,0 +1,87 @@
+.qq-table-dashboard {
+  overflow: hidden;
+  border: 1px solid @color-very-pale-blue-3;
+  border-radius: 15px;
+}
+.qq-table-dashboard__table {
+  width: 100%;
+  font-family: @font-default;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border-collapse: collapse;
+  th,
+  tr:not(:last-child) td {
+    border-bottom: 1px solid @color-very-pale-blue-3;
+  }
+  th {
+    padding: 14px 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    background-color: @color-periwinkle-crayola;
+    &:last-child {
+      padding-right: 11px;
+    }
+  }
+  td {
+    padding: 16px 8px;
+    &:last-child {
+      padding-right: 11px;
+    }
+    .red {
+      color: @color-american-pink;
+    }
+    .green {
+      color: @color-malachite;
+    }
+  }
+  .qq-table-dashboard__d-check {
+    width: 31px;
+    padding-right: 4px;
+    padding-left: 11px;
+  }
+  .qq-table-dashboard__d-num {
+    width: min-content;
+    padding-left: 4px;
+  }
+  .qq-table-dashboard__d-qaqc {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    span {
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+  }
+  .qq-table-dashboard__d-full {
+    padding: 0;
+  }
+  .qq-table-dashboard__icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    svg {
+      display: block;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      &.red {
+        fill: @color-american-pink;
+      }
+      &.green {
+        fill: @color-malachite;
+      }
+    }
+  }
+}
+.qq-table-dashboard__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+}

@@ -1,0 +1,64 @@
+include /components/form/f-label
+include /components/form/f-field
+include /components/form/f-select
+
+mixin qq-filter({ isShow, className })
+  -
+    let moderators = [
+      "Aron/Amir (123)",
+      "Shah/Jacob (123)",
+      "John White (145)",
+      "Amir Akhrorov (145)",
+      "Luke Shaw (15)",
+      "Farruh Bradley (125)",
+      "Muhammad Bakhriev (456)",
+      "Tekhron Tokhir-zoda (456)",
+    ]
+    let filterElements = [
+      {
+        label: "Facility",
+        el: "select",
+        value: "New York",
+        placeholder: "Choose city"
+      },
+      {
+        label: "Note was created after",
+        value: "02/18/2024 11:33 PM",
+      },
+      {
+        label: "Note was created before",
+        value: "02/18/2024 11:33 PM",
+      },
+      {
+        label: "By driver",
+        el: "select",
+        placeholder: "Choose driver"
+      },
+      {
+        label: "By dispatcher",
+        el: "select",
+        placeholder: "Choose dispatcher"
+      },
+      {
+        label: "Items on page",
+        value: "100"
+      }
+    ]
+    let clickHandler = "document.querySelector('.qq-filter').classList.toggle('show')"
+  .qq-filter(class=isShow && "show" class=className)
+    button.qq-filter__btn(onclick=clickHandler) Filters
+    .qq-filter__modal
+      .qq-filter__top
+        each it in filterElements
+          .qq-filter__el
+            +f-label({ text: it.label })
+            if it.el === "select"
+              +f-select({ placeholder: it.placeholder, value: it.value })
+            else
+              +f-field({ placeholder: it.placeholder, value: it.value })
+      .qq-filter__bottom
+        .qq-filter__title Moderators:
+        .qq-filter__list
+          each it in moderators
+            button.qq-filter__label=it
+

@@ -1,0 +1,68 @@
+.qq-notes-reject {
+  padding: 16px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: @color-signal-blue;
+  background-color: @color-periwinkle-crayola;
+  border-radius: 20px;
+  &.small {
+    padding: 12px;
+  }
+}
+.qq-notes-reject__title {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.qq-notes-reject__msg {
+  margin-bottom: 8px;
+  padding: 12px;
+  background-color: rgb(@color-blue-degrees 0.1);
+  border-radius: 12px;
+}
+.qq-notes-reject__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  align-items: start;
+  gap: 8px;
+}
+.qq-notes-reject__el {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background-color: @color-white;
+  border-radius: 12px;
+}
+.qq-notes-reject__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: @color-radical-red;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+}
+.qq-notes-reject__text {
+  line-height: 21px;
+  font-weight: 500;
+}
+.p-qaqc__reject {
+  display: grid;
+  grid-template-columns: 714px 1fr;
+  gap: 12px;
+}
+.p-qaqc__reject-col {
+  display: grid;
+  align-content: start;
+  align-items: start;
+  gap: 12px;
+}

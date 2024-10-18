@@ -1,0 +1,45 @@
+.qq-progress {
+  display: flex;
+  gap: 8px;
+}
+.qq-progress__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  margin: 0;
+  padding: 7px 14px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: @color-signal-blue;
+  background-color: @color-periwinkle-crayola;
+  border: 0;
+  border-radius: 30px;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+  &.pending {
+    background-color: rgb(@color-melon-yellow-2 0.3);
+  }
+  &.done {
+    background-color: rgb(@color-lime-green-2 0.1);
+    svg {
+      fill: @color-lime-green-2;
+    }
+  }
+  &.error {
+    background-color: rgb(@color-radical-red 0.1);
+    svg {
+      fill: @color-radical-red;
+    }
+  }
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+  }
+}

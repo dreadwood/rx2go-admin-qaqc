@@ -1,0 +1,43 @@
+{
+  "name": "rx2go-admin-qaqc",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "pugprettier:fix": "prettier --write '**/*.pug' --plugin='@prettier/plugin-pug'",
+    "stylelint": "stylelint 'src/scss/**/*.scss'",
+    "stylelint:fix": "stylelint 'src/scss/**/*.scss' --fix",
+    "gh-pages": "push-dir --dir=dist --branch=gh-pages",
+    "public": "pnpm run build && pnpm run gh-pages"
+  },
+  "author": "dreadwood",
+  "devDependencies": {
+    "@prettier/plugin-pug": "3.1.0",
+    "autoprefixer": "10.4.19",
+    "browser-sync": "3.0.2",
+    "del": "7.1.0",
+    "eslint": "8.57.0",
+    "gulp": "5.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-csso": "4.0.1",
+    "gulp-imagemin": "9.1.0",
+    "gulp-less": "5.0.0",
+    "gulp-order": "1.2.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "10.0.0",
+    "gulp-pug": "5.0.0",
+    "gulp-rename": "2.0.0",
+    "gulp-sourcemaps": "3.0.0",
+    "gulp-svgstore": "9.0.0",
+    "gulp-uglify-es": "3.0.0",
+    "gulp-webp": "5.0.0",
+    "imagemin-avif": "0.1.6",
+    "postcss": "8.4.38",
+    "pug": "3.0.2",
+    "push-dir": "0.4.1",
+    "stylelint": "16.3.1",
+    "stylelint-config-standard-less": "3.0.1",
+    "stylelint-order": "6.0.4",
+    "stylelint-prettier": "5.0.2",
+    "uglify-js": "3.17.4"
+  }
+}

@@ -1,0 +1,20 @@
+mixin qq-photo({ isSignature })
+  .qq-photo
+    .qq-photo__img(class=isSignature && "signature")
+      if isSignature
+        img(src="/img/signature.png" width="414" height="600" alt="")
+      else
+        img(src="/img/placeholder-house.jpg" width="414" height="600" alt="")
+    .qq-photo__zoom
+      - let clickHandler = "this.classList.toggle('actv')"
+      each it, i in ["x1", "x1.5", "x2", "x3"]
+        button.qq-photo__zoom-in(class=(i === 0 && "actv") onclick=clickHandler)=it
+    .qq-photo__bottom
+      button.qq-photo__magnifier(onclick=clickHandler)
+        +svg({ name: "magnifier-plus", width: 20, height: 20 })
+      if !isSignature
+        .qq-photo__list
+          button.qq-photo__preview.actv
+            img(src="/img/preview-1.jpg" width="51" height="69" alt="")
+          button.qq-photo__preview
+            img(src="/img/preview-2.jpg" width="51" height="69" alt="")

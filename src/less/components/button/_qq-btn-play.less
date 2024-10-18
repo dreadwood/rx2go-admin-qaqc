@@ -1,0 +1,31 @@
+.qq-btn-play {
+  .transition(background-color);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 10px 20px 9px 20px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  color: @color-white;
+  background-color: @color-malachite;
+  border: 0;
+  border-radius: 8px;
+  &[disabled] {
+    opacity: 0.6;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    background-color: rgb(@color-malachite 0.8);
+    cursor: pointer;
+  }
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    fill: currentcolor;
+  }
+}

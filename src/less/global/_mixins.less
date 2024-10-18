@@ -1,0 +1,28 @@
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hide-scroll {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.transition(@args...) {
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  transition-property: @args;
+}
+.word-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-nowrap {
+  white-space: nowrap;
+}

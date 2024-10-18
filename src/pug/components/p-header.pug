@@ -1,0 +1,12 @@
+include /elements/images
+include /components/form/f-search
+include /components/qq-header
+
+mixin p-header({ title, btnText, type, className })
+  header.p-layout__header(class=className)
+    h1.p-layout__header-title=title
+    .p-layout__header-content
+      +qq-header({ btnText, type })
+    if type !== "reject"
+      form.p-layout__search(action="#" role="search")
+        +f-search({})

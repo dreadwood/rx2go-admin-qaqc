@@ -1,0 +1,58 @@
+.qq-hold {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  background-color: @color-blue-alice;
+  border-radius: 8px;
+  &.actv {
+    color: @color-white;
+    background-color: @color-cornflower-blue;
+    .qq-hold__btn {
+      color: @color-cornflower-blue;
+      background-color: @color-white;
+    }
+  }
+}
+.qq-hold__icon-time {
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: currentcolor;
+  }
+}
+.qq-hold__btn {
+  .transition(color, background-color);
+  display: block;
+  flex-shrink: 0;
+  width: max-content;
+  margin: 0;
+  padding: 3px 7px;
+  font: inherit;
+  text-align: center;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border: 0;
+  border-radius: 30px;
+  &:hover,
+  &:focus-visible {
+    background-color: rgb(@color-cornflower-blue 0.3);
+    cursor: pointer;
+  }
+  &.actv {
+    color: @color-white;
+    background-color: @color-cornflower-blue;
+  }
+}
+.qq-hold__icon-done {
+  display: block;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+}

@@ -1,0 +1,23 @@
+include /elements/head
+include /elements/images
+
+- let title = ""
+- let headerTitle = ""
+
+block data
+
+doctype html
+html(lang="en")
+  +head({ title })
+  body
+    section.p-layout
+      .p-layout__left
+        a.p-layout__logo(href="/")
+          +svg({ name: "/img/logo-rx2go.svg", width: 97, height: 25 })
+      .p-layout__right
+        block header
+        block content
+
+    //- block modal
+
+    include /elements/script

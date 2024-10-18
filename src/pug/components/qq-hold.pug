@@ -1,0 +1,14 @@
+mixin qq-hold({ isActv, className })
+  .qq-hold(class=isActv && "actv" class=className)
+    - let clickHandler = "this.classList.toggle('actv')"
+    .qq-hold__icon-time
+      +svg({ name: "clock", width: 26, height: 26 })
+    | On hold
+    if isActv
+      button.qq-hold__btn 4min 45 sec
+    else
+      button.qq-hold__btn.actv(onclick=clickHandler) 5min
+      button.qq-hold__btn(onclick=clickHandler) 10min
+      button.qq-hold__btn(onclick=clickHandler) 15min
+      .qq-hold__icon-done
+        +svg({ name: "done", width: 26, height: 26 })

@@ -1,0 +1,17 @@
+include /elements/favicon
+
+- let title = ""
+
+block data
+
+doctype html
+html(lang="en")
+  head
+    meta(name="robots" content="noindex, nofollow")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    +favicon({})
+  body
+    main
+      block content

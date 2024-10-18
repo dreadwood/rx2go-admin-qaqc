@@ -1,0 +1,30 @@
+.qq-btn-call {
+  .transition(color, background-color);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: @color-white;
+  text-decoration: none;
+  background-color: @color-cornflower-blue;
+  border: 0;
+  border-radius: 9px;
+  &:hover,
+  &:focus-visible {
+    background-color: @color-cornflower;
+    cursor: pointer;
+  }
+  svg {
+    flex-shrink: 0;
+    width: 13px;
+    height: 13px;
+    fill: currentcolor;
+  }
+}

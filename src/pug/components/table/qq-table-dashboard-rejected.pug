@@ -1,0 +1,40 @@
+include /components/form/f-checkbox-table
+
+mixin qq-table-dashboard-rejected({})
+  -
+    let iconsTable = [
+      { icon: "house", color: "red" },
+      { icon: "doors", color: "red" },
+      { icon: "user-2", color: "green" },
+      { icon: "signature-pen", color: "green" },
+      { icon: "doorstep-delivery", color: "red" },
+      { icon: "book-info", color: "green" },
+      { icon: "usd-circle", color: "green" },
+      { icon: "user-card-2", color: "green" },
+    ]
+  .qq-table-dashboard
+      table.qq-table-dashboard__table
+        thead
+          tr
+            th.qq-table-dashboard__d-check #[+f-checkbox-table({})]
+            th.qq-table-dashboard__d-num #
+            th QAQC
+            th Order #
+            th Status
+            th Driver
+            th Dispatcher
+            th Client
+        tbody
+          each _, i in (new Array(15)).fill('')
+            tr
+              td.qq-table-dashboard__d-check #[+f-checkbox-table({})]
+              td.qq-table-dashboard__d-num=(i + 1)
+              td
+                .qq-table-dashboard__icons
+                  each it in iconsTable
+                    +svg({ name: it.icon, width: 16, height: 16, className: it.color })
+              td #[b #12345678]
+              td Delivered
+              td Paul Thompson
+              td Meylisgeldi Tachmammedov
+              td Modern Remedies Pharmacy - Modern Remedies Pharmacy

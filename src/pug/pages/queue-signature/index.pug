@@ -1,0 +1,48 @@
+extends /elements/layout-page
+include /components/p-header
+include /components/qq-progress
+include /components/qq-info
+include /components/qq-notes-queue
+include /components/qq-question
+include /components/qq-previous
+include /components/qq-photo
+include /components/qq-photo-preview
+include /components/label/qq-label-time
+
+block data
+  - title = "Rx2Go Admin: QAQC — Queque Signature"
+  - headerTitle = "QAQC Queque"
+
+block header
+  +p-header({ title: headerTitle, btnText: "Dashboard" })
+
+block content
+  .p-qaqc
+    .p-qaqc__queue
+      div
+        .p-qaqc__queue-progress
+          +qq-progress({ index: 3 })
+        .p-qaqc__queue-container
+          +qq-info({})
+          .p-qaqc__queue-content
+            .p-qaqc__queue-top
+              .p-qaqc__title Signature
+              +qq-label-time({ text: "00:08" })
+            +qq-question({
+              title: "Is signature looks real?",
+              values: ["No Signature", "Wrong Signature"],
+              okText: "Yes"
+            })
+            .p-qaqc__queue-col-list
+              .p-qaqc__queue-first-col
+                +qq-photo({ isSignature: true })
+                +qq-photo-preview({ isSignature: true })
+              .p-qaqc__queue-second-col
+                .p-qaqc__queue-cols
+                  +qq-previous({
+                    title: "Previous orders signatures:",
+                    isSignature: true
+                  })
+                  +qq-exist({ text: "Exist in Dispathcer Queue", className: "chat" })
+
+      +qq-notes-queue({})

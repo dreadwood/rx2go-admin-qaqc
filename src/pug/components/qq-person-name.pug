@@ -1,0 +1,21 @@
+mixin qq-person-name({})
+  -
+    let pesonNameData = [
+      {
+        label: "Who gets the order?",
+        value: "Patient (Recipient)"
+      },
+      {
+        label: "Recipient Name:",
+        value: "Layne Norville"
+      },
+      {
+        label: "Driver Entered Name:",
+        value: "Layne Norville"
+      },
+    ]
+  .qq-person-name
+    each it in pesonNameData
+      .qq-person-name__el
+        =it.label
+        .qq-person-name__value=it.value

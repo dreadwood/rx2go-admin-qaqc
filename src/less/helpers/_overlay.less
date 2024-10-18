@@ -1,0 +1,19 @@
+.overlay {
+  .hide-scroll();
+  position: fixed;
+  z-index: 9;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  overflow: scroll;
+  // background-color: rgb(@color-black 0.2);
+  background-color: rgb(@color-black 0.5);
+  inset: 0;
+  &.show {
+    display: flex;
+  }
+}
+.overlay__dialog {
+  width: max-content;
+  margin: auto;
+}

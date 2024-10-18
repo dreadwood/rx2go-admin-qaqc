@@ -1,0 +1,19 @@
+extends /elements/layout-page
+include /components/p-header
+include /components/table/qq-table-dashboard-rejected
+
+block data
+  - title = "Rx2Go Admin: QAQC — Queque Dashboard"
+  - headerTitle = "QAQC Rejected Dashboard"
+
+block header
+  +p-header({
+    title: headerTitle,
+    type: "dashboard",
+    btnText: "Queue"
+  })
+
+block content
+  .p-qaqc
+    h2.p-qaqc__title.p-qaqc__title--dashboard Notes Rejected (16):
+    +qq-table-dashboard-rejected({})

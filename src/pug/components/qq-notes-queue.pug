@@ -1,0 +1,26 @@
+include /components/label/qq-label-notes
+
+mixin qq-notes-queue({})
+  -
+    let notesItems = [
+      { time: "2m 30s ago" },
+      { time: "1m ago" },
+      { time: "45s ago" },
+      {
+        time: "5 min ago",
+        isPerson: true,
+        isError: true
+      },
+      {
+        time: "3 min ago",
+        isPerson: true
+      },
+    ]
+  .qq-notes-queue
+    button.qq-notes-queue__btn Stop workout
+    .qq-notes-queue__title Notes queue 37:
+    .qq-notes-queue__list
+      each it in notesItems
+        +qq-label-notes({ ...it })
+      each it in (new Array(10).fill(notesItems[4]))
+        +qq-label-notes({ ...it })

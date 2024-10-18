@@ -1,0 +1,22 @@
+mixin qq-previous({ isOpen, title, isSignature, className })
+  .qq-previous(class=className)
+    .qq-previous__order(class=isOpen && "show")
+      - let clickHandler = "this.parentNode.classList.toggle('show')"
+      button.qq-previous__btn(onclick=clickHandler)
+        | Previous Orders: 8
+        .qq-previous__btn-icon
+          +svg({ name: "dropdown-arrow", width: 18, height: 18 })
+      .qq-previous__order-list
+        each it in (new Array(8).fill("#19245347"))
+          .qq-previous__label=it
+    =title
+    .qq-previous__photo-wrp
+      .qq-previous__photo-list
+        if isSignature
+          each it in (new Array(8).fill(""))
+            .qq-previous__photo.signature
+              img(src="/img/signature.png" width="75" height="100" alt="")
+        else
+          each it in (new Array(20).fill(""))
+            .qq-previous__photo
+              img(src="/img/preview-2.jpg" width="75" height="100" alt="")

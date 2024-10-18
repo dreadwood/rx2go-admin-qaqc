@@ -1,0 +1,66 @@
+extends /elements/layout-page
+include /components/p-header
+include /components/qq-progress
+include /components/qq-info
+include /components/qq-notes-queue
+include /components/qq-question
+include /components/qq-previous
+include /components/qq-photo
+include /components/qq-photo-preview
+include /components/label/qq-label-time
+include /components/card/qq-card-msg
+
+block data
+  - title = "Rx2Go Admin: QAQC — Queque Special instruction"
+  - headerTitle = "QAQC Queque"
+
+block header
+  +p-header({ title: headerTitle, btnText: "Dashboard" })
+
+block content
+  .p-qaqc
+    .p-qaqc__queue
+      div
+        .p-qaqc__queue-progress
+          +qq-progress({ index: 5 })
+        .p-qaqc__queue-container
+          +qq-info({})
+          .p-qaqc__queue-content
+            .p-qaqc__queue-top
+              .p-qaqc__title Special instruction
+              +qq-label-time({ text: "00:08" })
+            +qq-question({
+              title: "Was the special instruction followed?",
+              values: ["The special instruction was not followed bu driver", "Special instruction was not followed by dispatcher"],
+              okText: "Yes"
+            })
+            .p-qaqc__queue-col-list
+              .p-qaqc__queue-first-col
+                +qq-card-msg({
+                  title: "Face-to-Face Signature requred",
+                  text: "Signature is required by any person who lives with the patient. The driver will take a picture of the patient's door.",
+                  titleClassName: "blue"
+                })
+                +qq-card-msg({
+                  title: "Special Instruction:",
+                  text: "if the patient asks to leave /for some reason can't reach the pharmacy plz put if the patient asks to leave /for some reason can't reach the pharmacy plz put if the patient asks to leave",
+                  className: "red"
+                })
+                +qq-photo({})
+                +qq-photo-preview({})
+              .p-qaqc__queue-second-col
+                .p-qaqc__queue-cols
+                  +qq-previous({
+                    title: "Previous orders signatures:",
+                    isSignature: true
+                  })
+                  +qq-exist({
+                    text: "Exist in Dispathcer Queue",
+                    className: "chat"
+                  })
+                +qq-exist({
+                  text: "Exist in Order Details",
+                  className: "call-notes"
+                })
+
+      +qq-notes-queue({})

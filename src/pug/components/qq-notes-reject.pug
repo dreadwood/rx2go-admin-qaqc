@@ -1,0 +1,56 @@
+include /elements/images
+
+mixin qq-notes-reject({ className })
+  .qq-notes-reject(class=className)
+    -
+      let notesReject = [
+        {
+          title: "Building:",
+          text: "No Building Number",
+          icon: "house"
+        },
+        {
+          title: "Apartment:",
+          text: "Wrong Apartment",
+          icon: "doors"
+        },
+        {
+          title: "Recipient Name:",
+          text: "Wrong Recipient Name",
+          icon: "user-2"
+        },
+        {
+          title: "Signature:",
+          text: "No Signature",
+          icon: "signature-pen"
+        },
+        {
+          title: "Delivery Method:",
+          text: "The delivery method was not followed",
+          icon: "doorstep-delivery"
+        },
+        {
+          title: "Special instruction:",
+          text: "The special instruction was not followed bu driver",
+          icon: "book-info"
+        },
+        {
+          title: "Copay:",
+          text: "There is not photo of copay",
+          icon: "usd-circle"
+        },
+        {
+          title: "Photo ID:",
+          text: "No photo of ID",
+          icon: "user-card-2"
+        },
+      ]
+    .qq-notes-reject__title QAQC Notes:
+    .qq-notes-reject__msg Wrong apartment in the photo, no signature, delivery method not followed
+    .qq-notes-reject__grid
+      each it in notesReject
+        .qq-notes-reject__el
+          .qq-notes-reject__name
+            +svg({ name: it.icon, width: 18, height: 18 })
+            =it.title
+          .qq-notes-reject__text=it.text

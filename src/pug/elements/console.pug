@@ -1,0 +1,7 @@
+mixin console({data})
+  script
+    if data
+      | const data = !{JSON.stringify(data)};
+      | console.log(data);
+    else
+      | console.log('data is empty');

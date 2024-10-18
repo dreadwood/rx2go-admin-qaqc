@@ -1,0 +1,7 @@
+mixin qq-btn-actv({ text, isActv, className })
+  - let clickHandler = "this.classList.toggle('actv')"
+  button.qq-btn-actv(
+    class=isActv && "actv"
+    class=className
+    onclick=clickHandler
+  )=text

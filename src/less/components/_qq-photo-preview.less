@@ -1,0 +1,51 @@
+.qq-photo-preview {
+  padding: 12px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+  color: @color-signal-blue;
+  background-color: @color-periwinkle-crayola;
+  border-radius: 16px;
+}
+.qq-photo-preview__list {
+  .hide-scroll;
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  margin-right: -12px;
+  margin-left: -12px;
+  padding-right: 12px;
+  padding-left: 12px;
+  overflow: scroll;
+}
+.qq-photo-preview__btn {
+  .transition(scale);
+  flex-shrink: 0;
+  width: 124px;
+  height: 163px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 12px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &.signature {
+    padding: 16px;
+    background-color: @color-white;
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+    scale: 0.98;
+  }
+}

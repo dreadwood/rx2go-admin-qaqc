@@ -1,0 +1,38 @@
+.qq-btn-reject {
+  .transition(color, background-color);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  min-width: 72px;
+  margin: 0;
+  padding: 10px 12px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: @color-signal-blue;
+  background-color: @color-blue-alice;
+  border: 0;
+  border-radius: 8px;
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+  }
+  &:not([disabled], .actv):hover,
+  &:not([disabled], .actv):focus-visible {
+    background-color: rgb(@color-cornflower-blue 0.3);
+  }
+  &.actv {
+    color: @color-white;
+    background-color: @color-signal-blue;
+  }
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+}

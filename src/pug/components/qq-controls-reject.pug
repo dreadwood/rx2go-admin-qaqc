@@ -1,0 +1,10 @@
+include /components/button/qq-btn-reject
+include /components/qq-hold
+
+mixin qq-controls-reject({})
+  .qq-controls-reject
+    +qq-btn-reject({ text: "Open New Ticket", icon: "ticket" })
+    +qq-btn-reject({ text: "Repeat stop for driver", icon: "repeat" })
+    +qq-hold({})
+    +qq-hold({ isActv: true })
+    +qq-btn-reject({ text: "Queue (37)", icon: "queue" })

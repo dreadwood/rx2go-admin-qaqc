@@ -1,0 +1,25 @@
+include /elements/images
+
+mixin qq-solution({ isForm })
+  .qq-solution
+    .qq-solution__title Describe the solution to the problem
+    if isForm
+      .qq-solution__form
+        textarea.qq-solution__form-field There is no apt number in the photo, but according to previous deliveries, apt looks the same. The geolocation also matches. I sent a link to the online signature, the patient put it. I checked the delivery method, everything is correct. The patient received the order
+        .qq-solution__notes
+          .qq-solution__title Quick notes:
+          .qq-solution__form-list
+            button.qq-solution__form-quick Patient received the delivery
+            button.qq-solution__form-quick Sending the driver back
+            button.qq-solution__form-quick Waiting for updates from patient
+            button.qq-solution__form-quick Waiting for updates from pharmacy
+          .qq-solution__form-controls
+            button.qq-solution__form-btn.green Problem solved
+            button.qq-solution__form-btn Leave a note
+    else
+      .qq-solution__item The problem is serious, sent the driver back to the patient. Putting it on hold, recheck in 15 minutes
+      .qq-solution__item The driver visited the patient and got the signature. Apartment number 4N (I took a photo). The problem is solved.
+      button.qq-solution__btn-add
+        +svg({ name: "plus-square", width: 22, height: 22 })
+        | Add Notes
+

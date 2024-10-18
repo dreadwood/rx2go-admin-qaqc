@@ -1,0 +1,7 @@
+include /elements/images
+
+mixin qq-btn-reject({ text, icon, className })
+  - let clickHandler = "this.classList.toggle('actv')"
+  .qq-btn-reject(class=className onclick=clickHandler)
+    +svg({ name: icon, width: 18, height: 18 })
+    span=text

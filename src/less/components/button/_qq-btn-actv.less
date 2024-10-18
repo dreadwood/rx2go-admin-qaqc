@@ -1,0 +1,26 @@
+.qq-btn-actv {
+  .transition(color, background-color);
+  display: block;
+  flex-shrink: 0;
+  width: max-content;
+  min-width: 72px;
+  margin: 0;
+  padding: 8px 16px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: @color-signal-blue;
+  background-color: @color-periwinkle-crayola;
+  border: 0;
+  border-radius: 30px;
+  &:not([disabled], .actv):hover,
+  &:not([disabled], .actv):focus-visible {
+    background-color: rgb(@color-cornflower-blue 0.2);
+    cursor: pointer;
+  }
+  &.actv {
+    color: @color-white;
+    background-color: @color-cornflower-blue;
+  }
+}

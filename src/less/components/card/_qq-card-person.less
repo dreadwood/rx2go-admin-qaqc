@@ -1,0 +1,165 @@
+.qq-card-person {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border-radius: 12px;
+}
+.qq-card-person__content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qq-card-person__photo {
+  position: relative;
+  flex-shrink: 0;
+  width: max-content;
+  img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  &.border {
+    img {
+      border: 2px solid @color-cobalt-blue;
+    }
+  }
+}
+.qq-card-person__data {
+  display: grid;
+  gap: 4px;
+  margin-right: auto;
+}
+.dq-card-person__raiting {
+  .text-nowrap;
+  position: absolute;
+  bottom: 7px;
+  // bottom: 0;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  color: @color-white;
+  background-color: @color-lime-green;
+  border-radius: 9px;
+  translate: -50% 100%;
+  svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+  }
+}
+.qq-card-person__name {
+  .transition(color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: @color-cornflower-blue;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 16px;
+    aspect-ratio: 1 / 1;
+    fill: currentcolor;
+  }
+  &:hover,
+  &:focus-visible {
+    color: @color-cornflower;
+    cursor: pointer;
+  }
+}
+.qq-card-person__num {
+  .transition(background-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  margin: 0;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: @color-signal-blue;
+  text-decoration: none;
+  background-color: @color-periwinkle-crayola;
+  border: 0;
+  border-radius: 30px;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 16px;
+    aspect-ratio: 1 / 1;
+    fill: currentcolor;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: @color-very-pale-blue;
+    cursor: pointer;
+  }
+}
+.qq-card-person__contact {
+  .transition(background-color);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 11px 9px;
+  font: inherit;
+  line-height: 18px;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  background-color: @color-periwinkle-crayola;
+  border: 0;
+  border-radius: 9px;
+  &:hover,
+  &:focus-visible {
+    background-color: @color-very-pale-blue;
+    cursor: pointer;
+  }
+}
+.qq-card-person__call {
+  .transition(background-color);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: @color-cornflower-blue;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: @color-white;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: @color-cornflower;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,44 @@
+extends /elements/layout-page
+include /components/p-header
+include /components/qq-progress
+include /components/qq-info
+include /components/qq-notes-queue
+include /components/qq-question
+include /components/qq-previous
+include /components/qq-person-name
+include /components/qq-photo-preview
+include /components/label/qq-label-time
+
+block data
+  - title = "Rx2Go Admin: QAQC — Queque Recipient Name"
+  - headerTitle = "QAQC Queque"
+
+block header
+  +p-header({ title: headerTitle, btnText: "Dashboard" })
+
+block content
+  .p-qaqc
+    .p-qaqc__queue
+      div
+        .p-qaqc__queue-progress
+          +qq-progress({ index: 2 })
+        .p-qaqc__queue-container
+          +qq-info({})
+          .p-qaqc__queue-content
+            .p-qaqc__queue-top
+              .p-qaqc__title Recipient Name
+              +qq-label-time({ text: "00:08" })
+            +qq-question({
+              title: "Is recipient name match to the inputed by driver?",
+              values: ["No Recipient Name", "Wrong Recipient Name"],
+              okText: "Yes"
+            })
+            .p-qaqc__queue-col-list
+              .p-qaqc__queue-first-col
+                +qq-person-name({})
+              .p-qaqc__queue-second-col
+                .p-qaqc__queue-cols
+                  +qq-previous({ title: "Previous driver’s photos:" })
+                  +qq-exist({ text: "Exist in Dispathcer Queue", className: "chat" })
+
+      +qq-notes-queue({})

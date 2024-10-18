@@ -1,0 +1,27 @@
+mixin qq-question({ title, values, type, okText, btnDisabled, className })
+  - let clickHandler = "this.classList.toggle('actv')"
+  .qq-question(class=className)
+    .qq-question__row
+      .qq-question__title=title
+      if type === "input"
+        input.qq-question__input.small(type="text")
+      if type === "inputError"
+        input.qq-question__input.small.error(type="text")
+      if type === "money"
+        .qq-question__label
+           +svg({ name: "wallet", width: 17, height: 17 })
+           | 90.00$
+      if type === "name"
+        .qq-question__field Layne Norville
+      button.qq-question__btn(disabled=(btnDisabled === 'green'))
+        if okText
+          =okText
+        else
+          +svg({ name: "done-2", width: 24, height: 24 })
+    .qq-question__row
+      .qq-question__bottom
+        each it in values
+          button.qq-question__value(onclick=clickHandler)=it
+        input.qq-question__input(type="text" placeholder="Leave a note")
+      button.qq-question__btn.red(disabled=(btnDisabled === 'red')) Save the note
+

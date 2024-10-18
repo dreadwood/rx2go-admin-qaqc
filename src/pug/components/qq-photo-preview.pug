@@ -1,0 +1,20 @@
+mixin qq-photo-preview({ isSignature, className })
+  .qq-photo-preview(class=className)
+    | Draft photo:
+    .qq-photo-preview__list
+      - let clickHandler = "this.classList.toggle('actv')"
+      if isSignature
+        button.qq-photo-preview__btn.actv(
+          class=isSignature && "signature"
+          onclick=clickHandler
+        )=it
+          img(src="/img/signature.png" width="124" height="163" alt="")
+      else
+        button.qq-photo-preview__btn.actv(onclick=clickHandler)=it
+          img(src="/img/preview-1.jpg" width="124" height="163" alt="")
+        button.qq-photo-preview__btn(onclick=clickHandler)=it
+          img(src="/img/preview-2.jpg" width="124" height="163" alt="")
+        button.qq-photo-preview__btn(onclick=clickHandler)=it
+          img(src="/img/preview-4.jpg" width="124" height="163" alt="")
+        button.qq-photo-preview__btn(onclick=clickHandler)=it
+          img(src="/img/placeholder-bag.jpg" width="124" height="163" alt="")

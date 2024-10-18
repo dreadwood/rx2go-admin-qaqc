@@ -1,0 +1,9 @@
+include /elements/images
+
+mixin f-checkbox-table({ isChecked, className })
+  label.f-checkbox-table(class=className)
+    input.visually-hidden(type="checkbox" id=id checked=isChecked )
+    .f-checkbox-table__icon
+      +svg({ name: "checkbox-off-fill", width: 16, height: 16, className: "checkbox-off" })
+      +svg({ name: "checkbox-on", width: 16, height: 16, className: "checkbox-on" })
+

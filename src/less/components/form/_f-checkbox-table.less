@@ -1,0 +1,24 @@
+.f-checkbox-table {
+  cursor: pointer;
+  input:checked + .f-checkbox-table__icon {
+    .checkbox-off {
+      display: none;
+    }
+    .checkbox-on {
+      display: block;
+    }
+  }
+}
+.f-checkbox-table__icon {
+  color: @color-gray-592;
+  svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+    stroke: currentcolor;
+  }
+  .checkbox-on {
+    display: none;
+  }
+}

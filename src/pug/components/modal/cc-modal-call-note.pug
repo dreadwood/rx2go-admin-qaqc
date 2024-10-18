@@ -1,0 +1,74 @@
+include /elements/images
+include /components/button/cc-fav-star-btn
+include /components/button/cc-actv-btn
+include /components/button/cc-copy-btn
+
+mixin cc-modal-call-note({})
+  -
+    let callType = [
+      'Confirmed rescheduling',
+      'Confirmed sending it back to pharmacy',
+      'Asked to hold on',
+      'Confirm or update the address',
+      'Receive a complain',
+      'Asked to callback',
+      'Other'
+    ]
+  .cc-modal-call-note
+    h2.cc-modal-call-note__title Set Call Note
+
+    .cc-modal-call-note__header
+      .cc-modal-call-note__name Manhattan apothecary
+
+      .cc-modal-call-note__info
+        | #19245347
+        +cc-fav-star-btn({})
+        .cc-modal-call-note__info-label.purple
+          +svg({ name: "user-card" })
+        .cc-modal-call-note__info-label.lightpurple
+          +svg({ name: "order-clock" })
+
+        .cc-modal-call-note__info-time
+          +svg({ name: "snowflake" })
+          | 23:22
+        +cc-copy-btn({})
+
+    .cc-modal-call-note__cards
+      .cc-modal-call-note__cards-item
+        .cc-modal-call-note__cards-rows
+          div
+            .cc-modal-call-note__card-title Call Result:
+            .cc-modal-call-note__card-list
+              +cc-actv-btn({ text: "Answered", className: "type2 green", isActv: true })
+              +cc-actv-btn({ text: "Not Answered", className: "type2 red" })
+
+          div
+            .cc-modal-call-note__card-title Left voicemail:
+            .cc-modal-call-note__card-list
+              +cc-actv-btn({ text: "Yes", className: "type2 green" })
+              +cc-actv-btn({ text: "No", className: "type2 red", isActv: true })
+
+      .cc-modal-call-note__cards-item
+        .cc-modal-call-note__card-title Answer:
+        .cc-modal-call-note__card-list
+          +cc-actv-btn({ text: "Patient", className: "type2" })
+          +cc-actv-btn({ text: "Pharmacy", className: "type2" })
+          +cc-actv-btn({ text: "Driver", className: "type2", isActv: true })
+
+      .cc-modal-call-note__cards-item
+        .cc-modal-call-note__card-title Scheduled next call attempt:
+        .cc-modal-call-note__cards-field
+          input(type="text" value="8 min")
+          button(aria-label="clear")
+            +svg({ name: "cross" })
+
+    .cc-modal-call-note__type-block
+      .cc-modal-call-note__type-title Call Type:
+      .cc-modal-call-note__type-list
+        each it, i in callType
+          +cc-actv-btn({ text: it, isActv: i === 1 })
+
+    .cc-modal-call-note__note-block
+      textarea.cc-modal-call-note__textarea(name="note" placeholder="Type Note Text")
+
+    button.cc-modal-call-note__btn-submin(disabled type="button") Save

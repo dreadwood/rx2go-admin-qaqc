@@ -1,0 +1,121 @@
+.qq-previous {
+  height: 600px;
+  padding: 10px;
+  overflow: hidden;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: @color-periwinkle-crayola;
+  border-radius: 16px;
+  &.reject {
+    height: auto;
+    .qq-previous__order {
+      background-color: transparent;
+    }
+    .qq-previous__photo-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+      gap: 8px;
+    }
+  }
+}
+.qq-previous__order {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: @color-white;
+  border-radius: 16px;
+  &.show {
+    .qq-previous__btn {
+      margin-bottom: 8px;
+    }
+    .qq-previous__btn-icon {
+      rotate: 180deg;
+    }
+    .qq-previous__order-list {
+      display: flex;
+    }
+  }
+}
+.qq-previous__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: -4px 0 -4px 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+    .qq-previous__btn-icon {
+      background-color: rgb(@color-signal-blue 0.2);
+    }
+  }
+}
+.qq-previous__btn-icon {
+  .transition(background-color, rotate);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(@color-signal-blue 0.1);
+  border-radius: 50%;
+  svg {
+    display: block;
+    width: 20px;
+    height: 17px;
+    fill: @color-signal-blue;
+  }
+}
+.qq-previous__order-list {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.qq-previous__label {
+  padding: 6px 13px;
+  color: @color-signal-blue;
+  background-color: @color-very-pale-blue-8;
+  border-radius: 30px;
+}
+.qq-previous__photo-wrp {
+  .hide-scroll;
+  // height: 100%;
+  margin-top: 8px;
+  overflow: scroll;
+}
+.qq-previous__photo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 8px;
+}
+.qq-previous__photo {
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 3 / 4;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &.signature {
+    display: grid;
+    place-items: center;
+    background-color: @color-white;
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      padding: 16px;
+    }
+  }
+}

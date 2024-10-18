@@ -1,0 +1,22 @@
+include /elements/images
+include /components/button/qq-btn-header
+include /components/button/qq-btn-play
+include /components/button/qq-btn-chat
+include /components/button/qq-btn-call
+
+mixin qq-header({ btnText, type, className })
+  .qq-header(class=className)
+    .qq-header__btn
+      +qq-btn-header({ text: btnText })
+    if type === "dashboard"
+      +qq-btn-play({ text: "Start" })
+    else if type === "reject"
+      .qq-header__reject
+        +qq-btn-chat({})
+        +qq-btn-call({})
+    else
+      .qq-header__label
+        div Time to workout: #[b 45 min 34 sec]
+        div Will be delivered today: #[b 2234]
+        div Moderated by you: #[b 0]
+        div Total in queue: #[b 9]

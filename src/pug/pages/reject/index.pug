@@ -1,0 +1,32 @@
+extends /elements/layout-page
+include /components/p-header
+include /components/qq-notes-reject
+include /components/qq-solution
+include /components/qq-previous
+include /components/qq-controls-reject
+
+block data
+  - title = "Rx2Go Admin: QAQC — Reject"
+  - headerTitle = "QAQC Reject"
+
+block header
+  +p-header({ title: headerTitle, btnText: "Dashboard", type: "reject" })
+
+block content
+  .p-qaqc
+    .p-qaqc__reject
+      .p-qaqc__reject-col
+        +qq-previous({ isOpen: true, className: "reject" })
+        +qq-notes-reject({})
+      .p-qaqc__reject-col
+        +qq-controls-reject({})
+        +qq-solution({})
+        +qq-solution({ isForm: true })
+
+
+
+
+
+
+
+

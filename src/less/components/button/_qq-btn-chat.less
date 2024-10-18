@@ -1,0 +1,52 @@
+.qq-btn-chat {
+  .transition(color, background-color);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  min-width: 72px;
+  margin: 0;
+  padding: 10px 19px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: @color-white;
+  text-decoration: none;
+  background-color: @color-cornflower-blue;
+  border: 0;
+  border-radius: 30px;
+  &:hover,
+  &:focus-visible {
+    background-color: @color-cornflower;
+    cursor: pointer;
+  }
+}
+.qq-btn-chat__icon {
+  position: relative;
+  flex-shrink: 0;
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+}
+.qq-btn-chat__count {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  display: grid;
+  place-items: center;
+  width: max-content;
+  height: 12px;
+  min-width: 12px;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  color: @color-white;
+  background-color: @color-american-pink;
+  border-radius: 10px;
+}

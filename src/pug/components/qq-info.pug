@@ -1,0 +1,65 @@
+include /elements/images
+include /components/card/qq-card-person
+include /components/other/dq-legend
+include /components/qq-exist
+
+mixin qq-info-label({ text })
+  .qq-info__label
+    =text
+    +svg({ name: "copy-2", width: 18, height: 18 })
+
+mixin qq-info-text({ title, text, className})
+  div
+    if title
+      .qq-info__title=title
+    .qq-info__text(class=className)=text
+
+mixin qq-info-map({ })
+  .qq-info__map
+    .qq-info__map-img
+      img(src="/img/map-location.jpg" width="329" height="219" alt="")
+    button.qq-info__map-btn
+      +svg({ name: "eye-open", width: 18, height: 18 })
+      span Google Street View
+    .qq-info__map-legend
+      +dq-legend({})
+
+mixin qq-info-details({})
+  .qq-info__details
+    .qq-info__details-title Delivery details
+    .qq-info__details-el
+      div Delivery method:
+      .qq-info__details-method
+        +svg({ name: "signature-pen-circle", width: 20, height: 20 })
+        span Face-to-Face Signature requred
+    .qq-info__details-col
+      .qq-info__details-el
+        div Type:
+        .qq-info__details-labels.purple
+          +svg({ name: "timer-2", width: 16, height: 16 })
+          span Next day special hours
+      .qq-info__details-el
+        div Sub Status:
+        .qq-info__details-labels.lightgreen
+          +svg({ name: "sub-status-open", width: 16, height: 16 })
+          span Open
+    //- Type:
+      Sub Status:
+      Delivery method:
+      Face-to-Face Signature requred
+        .qq-info__details-label
+
+mixin qq-info({})
+  .qq-info
+    .dq-info__top
+      +qq-info-label({ text: "#19245347" })
+      +qq-info-label({ text: "BROOKLYN-2" })
+    +qq-info-text({ text: "Modern Remedies Pharmacy - Modern Remedies Pharmacy" })
+    +qq-card-person({ title: "Driver:", img: "/img/placeholder-driver.jpg", name: "Akhtamov Umid", num: "219224680", raiting: "4.8" })
+    +qq-card-person({ title: "Dispatcher:", img: "/img/placeholder-dispatcher.jpg", name: "Joseph Clinton", num: "219224680", isContact: true })
+    +qq-info-text({ title: "Special Instruction:", text: "if the patient asks to leave /for some reason can't reach the pharmacy plz put if the patient asks to leave /for some reason can't reach the pharmacy plz put if the patient asks to leave", className: "error" })
+    +qq-info-map({})
+    +qq-exist({ text: "Exist in Order Details"})
+    +qq-exist({ text: "Exist in Order Details"})
+    +qq-info-details({})
+    +qq-info-text({ title: "Instructions for Dispatch:", text: "If the patient is not home, or if there is an incorrect address or refusal, call the pharmacy to confirm whether to reschedule the delivery", className: "field" })

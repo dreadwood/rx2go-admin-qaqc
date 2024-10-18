@@ -1,0 +1,38 @@
+include /elements/images
+include /components/label/cc-status-label
+
+mixin cc-modal-incoming({})
+  .cc-modal-incoming
+    .cc-modal-incoming__title Incoming Calls
+    .cc-modal-incoming__time Await time: #[span 12s]
+
+    .cc-modal-incoming__person-card
+      +picture({
+        image: "/img/userpic.png",
+        width: "64",
+        height: "64",
+        className: "person-photo"
+      })
+      .cc-modal-incoming__person-name Avtandil Chubinidze
+      .cc-modal-incoming__person-phone +1 (234) 567-8901
+
+      .cc-modal-incoming__order
+        | Active order:
+        .cc-modal-incoming__order-item
+          | #19245347
+          +cc-status-label({ value: "Driver Out" })
+        .cc-modal-incoming__order-item
+          | #19245347
+          +cc-status-label({ value: "Route Optimized" })
+
+    .cc-modal-incoming__company
+      | Pharmacy Name:
+      .cc-modal-incoming__company-name
+        +picture({ image: "/img/logo-default.png", width: "30", height: "30" })
+        | MANHATTAN APOTHECARY
+
+    .cc-modal-incoming__controls
+      button.cc-modal-incoming__btn.red Mute
+      button.cc-modal-incoming__btn
+        +svg({ name: "call-phone" })
+        | Accept

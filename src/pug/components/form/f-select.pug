@@ -1,0 +1,11 @@
+mixin f-select({ value, placeholder })
+  .f-select
+    +svg({ name: "dropdown-arrow", width: 20, height: 16 })
+    select.f-select__field
+      option=placeholder
+      if value
+        option(value=value.split(" ").join("_") selected)=value
+      option(value="1") value 1
+      option(value="2") value 2
+      option(value="3") value 3
+

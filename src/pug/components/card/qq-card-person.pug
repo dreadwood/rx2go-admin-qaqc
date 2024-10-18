@@ -1,0 +1,25 @@
+include /elements/images
+
+mixin qq-card-person({ title, img, name, num, raiting, isContact })
+  .qq-card-person
+    div=title
+    .qq-card-person__content
+      .qq-card-person__photo(class=raiting && "border")
+        img(src=img width="40" height="40" alt="")
+        if raiting
+          .dq-card-person__raiting
+            +svg({ name: "star-yellow-2", width: 12, height: 12 })
+            =raiting
+      .qq-card-person__data
+        button.qq-card-person__name
+          =name
+          +svg({ name: "copy-2", width: 16, height: 16 })
+        button.qq-card-person__num
+          =num
+          +svg({ name: "copy-2", width: 16, height: 16 })
+      if isContact
+        a.qq-card-person__contact(href="#")
+          +svg({ name: "icon-telegram-2", width: 18, height: 18 })
+          | @josephcl
+        button.qq-card-person__call
+          +svg({ name: "call-phone-3", width: 18, height: 18 })

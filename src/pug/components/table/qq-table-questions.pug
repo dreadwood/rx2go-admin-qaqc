@@ -1,0 +1,33 @@
+mixin qq-table-questions({})
+  -
+    let tableQuestions = [
+      "Is The <b>required time interval</b> confirmed?",
+      "Is The <b>promised time interval</b> confirmed?",
+      "Was a <b>phone call</b> made before the delivery?",
+      "Was a <b>phone call made to the pharmacy</b> after the delivery attempt?",
+      "Is The required <b>delivery date</b> confirmed?",
+      "Is The <b>Geofence</b> within 100 feet?",
+      "Does the photo of the <b>package</b> look real?",
+      "Does the photo of the <b>ID</b> look real?",
+      "Does the photo of the <b>Building</b> look real?",
+      "Does the photo of the <b>Apartment</b> look real?",
+      "Does the photo of the <b>Fridge</b> look real?",
+      "Does the photo of the <b>Copay</b> look real?",
+      "Were the <b>special instruction</b> for the driver followed?",
+      "Does the <b>signature</b> look genuine?",
+      "Does the <b>Delivery method</b> look correct?",
+      "Does the <b>Recipient’s name</b> look correct?",
+      "Were the <b>special instruction for the dispatcher followed</b>?",
+      "Does thr delivery attempted <b>substatus</b> look correct?",
+      "Was a <b>dispatch note</b> validated after the delivery attempt?",
+      "Did we call the <b>pharmacy</b>?",
+      "Did we call the <b>patient</b>?",
+    ]
+  table.qq-table-questions
+    thead
+      each it, i in tableQuestions
+        tr
+          td !{it}
+          td #[.qq-table-questions__label.green 12(20%)]
+          td #[.qq-table-questions__label.red=(i === 0 ? "1345(76%)" : "77(76%)")]
+          td #[.qq-table-questions__label.yellow 13(22%)]

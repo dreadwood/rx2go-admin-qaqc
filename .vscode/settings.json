@@ -1,0 +1,18 @@
+{
+  "[javascript][javascriptreact][typescript][typescriptreact][json][css][scss][less][pug]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css][scss][less]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "postcss",
+    "vue"
+  ],
+}

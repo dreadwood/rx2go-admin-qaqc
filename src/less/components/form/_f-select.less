@@ -1,0 +1,34 @@
+.f-select {
+  position: relative;
+  background-color: @color-white;
+  svg {
+    .transition(transform);
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+    display: block;
+    width: 20px;
+    height: 16px;
+    fill: @color-cadet-blue-crayola-2;
+  }
+}
+.f-select__field {
+  position: relative;
+  width: 100%;
+  padding: 10px 9px;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: @color-signal-blue;
+  background-color: transparent;
+  border: 1px solid @color-very-pale-blue-3;
+  border-radius: 9px;
+  cursor: pointer;
+  appearance: none;
+  option {
+    color: rgb(@color-signal-blue 0.5);
+  }
+}

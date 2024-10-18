@@ -1,0 +1,42 @@
+.f-field {
+  .transition(border-color);
+  width: 100%;
+  padding: 10px 9px;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border: 1px solid @color-very-pale-blue-3;
+  border-radius: 9px;
+  appearance: none;
+  &::placeholder {
+    font: inherit;
+    color: rgb(@color-signal-blue 0.6);
+  }
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {
+    display: none;
+    margin: 0;
+    appearance: none;
+  }
+  &[type="number"] {
+    // firefox
+    appearance: textfield;
+  }
+  // for hidden key icon in safari
+  &::-webkit-credentials-auto-fill-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  &:hover,
+  &:focus-visible {
+    border-color: @color-very-pale-blue-5;
+  }
+}
