@@ -1,4 +1,4 @@
-# Шаблон Gulp для верстки
+# Rx2Go Admin QAQC
 
 ## Разработка
 
@@ -13,11 +13,3 @@
 
 * Все разработка ведёться в директории `src/`
 * Итоговый код попадает в директорию `dist/`
-
-## TODO
-
-- добавить eslint
-- добавить новые свойства для stylelint-order
-- поддержку ES module [gulp-template](https://github.com/dDenysS/gulp-template)
-- добавить константы для путей в конфиге
-- добавить husky.js
