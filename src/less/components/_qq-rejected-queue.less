@@ -1,0 +1,68 @@
+.qq-rejected-queue {
+  position: relative;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: @color-signal-blue;
+  &.show {
+    .qq-rejected-queue__dialog {
+      display: block;
+    }
+  }
+}
+.qq-rejected-queue__dialog {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  width: 260px;
+  padding: 15px;
+  background-color: @color-white;
+  border: 1px solid rgb(@color-black 0.1);
+  border-radius: 22px;
+  translate: 0 8px;
+}
+.qq-rejected-queue__title {
+  text-transform: uppercase;
+}
+.qq-rejected-queue__filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+}
+.qq-rejected-queue__filter {
+  .transition(color, background-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 2px 6px;
+  font: inherit;
+  color: @color-signal-blue;
+  background-color: @color-very-pale-blue-2;
+  border: 0;
+  border-radius: 4px;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: rgb(@color-signal-blue 0.1);
+    cursor: pointer;
+  }
+  &.actv {
+    color: @color-white;
+    background-color: @color-signal-blue;
+  }
+}
+.qq-rejected-queue__list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}

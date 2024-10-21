@@ -26,6 +26,8 @@ block content
           +qq-btn-actv({ text: "Delivered"})
           +qq-btn-actv({ text: "Attempts"})
           +qq-filter({ className: "p-qaqc__filter-modal"})
-        +qq-table-questions({})
-      +qq-table-dashboard-queue({})
+        .p-qaqc__table
+          +qq-table-questions({})
+      .p-qaqc__table-queue
+        +qq-table-dashboard-queue({})
 

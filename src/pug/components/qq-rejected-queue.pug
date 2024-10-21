@@ -1,0 +1,36 @@
+include /components/button/qq-btn-reject
+include /components/card/qq-card-rejected
+include /elements/images
+
+mixin qq-rejected-queue({ isActv })
+  -
+    let filterItems = [
+      { text: 3, icon: "house" },
+      { text: 2, icon: "doors" },
+      { text: 12, icon: "user-2" },
+      { text: 18, icon: "signature-pen" },
+      { text: 18, icon: "doorstep-delivery" },
+      { text: 18, icon: "book-info" },
+      { text: 18, icon: "usd-circle" },
+      { text: 18, icon: "user-card-2" }
+    ]
+    let icons = filterItems.map(it => it.icon)
+    let clickHandler = "this.parentNode.classList.toggle('show')"
+    let clickFilterHandler = "this.classList.toggle('actv')"
+  .qq-rejected-queue(class=isActv && "show")
+    +qq-btn-reject({
+      text: "Queue (37)",
+      icon: "queue",
+      isActv,
+      onClick: clickHandler
+    })
+    .qq-rejected-queue__dialog
+      .qq-rejected-queue__title Rejected in the queue 37:
+      .qq-rejected-queue__filter-list
+        each it in filterItems
+          button.qq-rejected-queue__filter(onclick=clickFilterHandler)
+            +svg({ name: it.icon, width: 16, height: 16 })
+            span=it.text
+      .qq-rejected-queue__list
+        each _ in (new Array(10).fill(""))
+          +qq-card-rejected({ icons })

@@ -1,0 +1,88 @@
+.qq-card-rejected {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 8px;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  background-color: @color-periwinkle-crayola;
+  border-radius: 12px;
+}
+.qq-card-rejected__progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    aspect-ratio: 1 / 1;
+    fill: currentcolor;
+  }
+}
+.qq-card-rejected__num {
+  font-weight: 600;
+  color: rgb(@color-signal-blue 0.6);
+}
+.qq-card-rejected__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+.qq-card-rejected__time {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+}
+.qq-card-rejected__label {
+  .text-nowrap;
+  flex-shrink: 0;
+  width: max-content;
+  padding: 0 6px;
+  font-weight: 700;
+  background-color: @color-very-pale-blue-7;
+  border-radius: 30px;
+  &.blue {
+    color: @color-white;
+    background-color: @color-cornflower-blue;
+  }
+  &.red {
+    color: @color-white;
+    background-color: @color-radical-red;
+  }
+  &.lightred {
+    color: @color-radical-red;
+    background-color: @color-crayola-thistle;
+  }
+}
+.qq-card-rejected__person {
+  .transition(color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  font-weight: 400;
+  color: @color-cornflower-blue;
+  text-decoration: none;
+  picture {
+    flex-shrink: 0;
+  }
+  img {
+    display: block;
+    width: 18px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+  span {
+    .text-truncate;
+  }
+  &:hover,
+  &:focus-visible {
+    color: @color-cornflower;
+    cursor: pointer;
+  }
+}

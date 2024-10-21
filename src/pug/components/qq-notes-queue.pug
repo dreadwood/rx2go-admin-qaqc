@@ -1,4 +1,4 @@
-include /components/label/qq-label-notes
+include /components/card/qq-card-notes
 
 mixin qq-notes-queue({})
   -
@@ -21,6 +21,6 @@ mixin qq-notes-queue({})
     .qq-notes-queue__title Notes queue 37:
     .qq-notes-queue__list
       each it in notesItems
-        +qq-label-notes({ ...it })
+        +qq-card-notes({ ...it })
       each it in (new Array(10).fill(notesItems[4]))
-        +qq-label-notes({ ...it })
+        +qq-card-notes({ ...it })

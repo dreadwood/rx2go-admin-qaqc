@@ -1,0 +1,16 @@
+include /elements/images
+
+mixin qq-card-rejected({ icons })
+  .qq-card-rejected
+    .qq-card-rejected__progress
+      each it in icons
+        +svg({ name: it, width: 16, height: 16 })
+    .qq-card-rejected__num #19245347
+    .qq-card-rejected__row
+      .qq-card-rejected__time 01:54:48
+      .qq-card-rejected__label.blue 5m ago
+    .qq-card-rejected__row
+      a.qq-card-rejected__person(href="#")
+        +picture({ image: "/img/placeholder-person.jpg", width: 18, height: 18 })
+        span Paul Thompson
+      .qq-card-rejected__label 3m 20s
