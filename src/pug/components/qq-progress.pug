@@ -1,6 +1,6 @@
 include /elements/images
 
-mixin qq-progress({ index, errorIndex })
+mixin qq-progress({ current, error = [], prevError })
   -
     let progressItems = [
       { text: "Building", icon: "house" },
@@ -15,9 +15,10 @@ mixin qq-progress({ index, errorIndex })
   .qq-progress
     each it, i in progressItems
       button.qq-progress__label(
-        class=(i === index && "pending")
-        class=(i < index && "done")
-        class=(i === errorIndex && "error")
+        class=(i === current && "current")
+        class=(i < current && "done")
+        class=(error.includes(i) && "error")
+        class=(i === prevError && "prevError")
       )
         +svg({ name: it.icon, width: 16, height: 16 })
         =it.text

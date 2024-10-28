@@ -1,0 +1,69 @@
+include /elements/images
+//- include /components/form/f-field
+
+mixin qq-modal-confirmation({})
+  -
+    let progressList = [
+      {
+        icon: "house",
+        name: "Building",
+        note: "It is not clear what house number is in the photo",
+      },
+      {
+        icon: "doors",
+        name: "Apartment",
+        answer: "No Apartment Number"
+      },
+      {
+        icon: "user-2",
+        name: "Recipient Name",
+        note: "The recipient's name is incorrect, the patient's instructions indicate a different name",
+      },
+      {
+        icon: "signature-pen",
+        name: "Signature",
+        answer: "No Signature",
+      },
+      {
+        icon: "doorstep-delivery",
+        name: "Delivery Method",
+        answer: "The delivery method was not followed",
+      },
+      {
+        icon: "book-info",
+        name: "Special instruction",
+        answer: "The special instruction was not followed bu driver",
+      },
+      {
+        icon: "usd-circle",
+        name: "Copay",
+        answer: "Wrong amount of copay",
+      },
+      {
+        icon: "user-card-2",
+        name: "Photo ID",
+        answer: "No photo of ID",
+      },
+    ]
+  .qq-modal-confirmation
+    .qq-modal-confirmation__title Confirmation required
+    .qq-modal-confirmation__subtitle Select following options or leave a note
+    .qq-modal-confirmation__list
+      each it in progressList
+        div
+          .qq-modal-confirmation__top
+            .qq-modal-confirmation__name
+              +svg({ name: it.icon, width: 16, height: 16 })
+              span=it.name
+            if it.answer
+              .qq-modal-confirmation__answer=it.answer
+          if it.note
+            .qq-modal-confirmation__note=it.note
+    //- +f-textarea({ placeholder: "Leave a note" })
+    textarea.qq-modal-confirmation__textarea(
+      class=className
+      placeholder="Leave a note"
+    )
+    .qq-modal-confirmation__contols
+      button.qq-modal-confirmation__btn Cancel
+      button.qq-modal-confirmation__btn.green Confirm

@@ -8,9 +8,10 @@ include /components/qq-previous
 include /components/qq-photo
 include /components/qq-photo-preview
 include /components/label/qq-label-time
+include /components/modal/qq-modal-confirmation
 
 block data
-  - title = "Rx2Go Admin: QAQC — Queque Photo ID"
+  - title = "Rx2Go Admin: QAQC — Queue Confimation Required"
   - headerTitle = "QAQC Queque"
 
 block header
@@ -21,11 +22,7 @@ block content
     .p-qaqc__queue
       div
         .p-qaqc__queue-progress
-          +qq-progress({
-            current: 7,
-            error: [2, 3, 7],
-            prevError: 1
-          })
+          +qq-progress({ current: 7 })
         .p-qaqc__queue-container
           +qq-info({})
           .p-qaqc__queue-content
@@ -52,3 +49,8 @@ block content
                     className: "chat"
                   })
       +qq-notes-queue({})
+
+block modal
+  .overlay.show
+    .overlay__dialog
+      +qq-modal-confirmation({})

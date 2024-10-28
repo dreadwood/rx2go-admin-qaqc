@@ -1,5 +1,6 @@
 .qq-table-dashboard {
-  overflow: hidden;
+  position: relative;
+  overflow: scroll;
   border: 1px solid @color-very-pale-blue-3;
   border-radius: 15px;
 }
@@ -18,6 +19,8 @@
     border-bottom: 1px solid @color-very-pale-blue-3;
   }
   th {
+    position: sticky;
+    top: 0;
     padding: 14px 8px;
     font-size: 14px;
     line-height: 18px;

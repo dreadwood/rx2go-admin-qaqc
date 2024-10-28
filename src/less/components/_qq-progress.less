@@ -3,6 +3,7 @@
   gap: 8px;
 }
 .qq-progress__label {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -15,7 +16,7 @@
   font-weight: 600;
   color: @color-signal-blue;
   background-color: @color-periwinkle-crayola;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 30px;
   svg {
     flex-shrink: 0;
@@ -23,8 +24,18 @@
     height: 16px;
     fill: currentcolor;
   }
-  &.pending {
-    background-color: rgb(@color-melon-yellow-2 0.3);
+  &.prevError {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 25px;
+      display: block;
+      width: 6px;
+      background-color: @color-radical-red;
+      border-radius: 50%;
+      aspect-ratio: 1;
+    }
   }
   &.done {
     background-color: rgb(@color-lime-green-2 0.1);
@@ -33,10 +44,14 @@
     }
   }
   &.error {
-    background-color: rgb(@color-radical-red 0.1);
+    background-color: @color-periwinkle-crayola;
+    border: 1px solid @color-radical-red;
     svg {
       fill: @color-radical-red;
     }
+  }
+  &.current {
+    background-color: rgb(@color-melon-yellow-2 0.3);
   }
   &:hover,
   &:focus-visible {

@@ -1,5 +1,6 @@
 .p-qaqc {
   // height: 100%;
+  height: calc(100% - 64px);
   padding: 16px;
   font-family: @font-default;
 }
@@ -19,6 +20,8 @@
   grid-template-columns: 576px auto;
   align-items: start;
   gap: 8px;
+  height: 100%;
+  overflow: hidden;
 }
 .p-qaqc__filter {
   display: flex;
@@ -28,6 +31,13 @@
 }
 .p-qaqc__filter-modal {
   margin-left: auto;
+}
+.p-qaqc__table {
+  overflow: scroll;
+}
+.p-qaqc__table-queue {
+  height: 100%;
+  overflow: scroll;
 }
 .p-qaqc__queue {
   display: grid;
